@@ -1,0 +1,27 @@
+
+
+SELECT     UserNames.id, UserNames.username, ServerNames.serverName, RuntimeLicenses.sid, RuntimeLicenses.expirationDate, RuntimeLicenses.computerID, 
+                      RuntimeLicenses.ProductName, RuntimeLicenses.productVersion, RuntimeLicenses.ColdfusionID, RuntimeLicenses.osID, RuntimeLicenses.isCommunityEdition, 
+                      RuntimeLicenses.copyrightNotice, RuntimeLicenses.RuntimeLicenseData
+FROM         EZAJAX.UserNames INNER JOIN
+                      EZAJAX.ServerNames ON UserNames.id = ServerNames.uid INNER JOIN
+                      EZAJAX.RuntimeLicenses ON ServerNames.id = RuntimeLicenses.sid
+WHERE (UserNames.username like 'raychorn%')
+
+
+
+
+
+
+
+SELECT     UserNames.id, UserNames.username
+FROM         EZAJAX.UserNames
+WHERE (UserNames.username like 'raychorn%')
+
+
+
+
+SELECT     UserNames.id, UserNames.username, ServerNames.serverName
+FROM         EZAJAX.UserNames INNER JOIN
+                      EZAJAX.ServerNames ON UserNames.id = ServerNames.uid
+WHERE (UserNames.username like 'raychorn%')

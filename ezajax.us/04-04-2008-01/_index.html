@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>The EzAJAX Runtime License Retrieval System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="index_files/newstyle.css" rel="stylesheet" type="text/css">
+<meta name="description" content="EZAJAX is the most powerful AJAX Framework known to mankind.">
+<meta name="keywords" content="web hosting, web hosting provider, affordable web hosting, email hosting, cheap web hosting, web hosting company, hosting reseller, domain web hosting, business web hosting, discount web hosting, reseller hosting, cheap hosting, ecommerce hosting, cheap internet hosting, shared hosting, mambo, web hosting plan, wordpress, blog hosting, ruby on rails hosting, ruby on rails">
+<link href="index_files/index9.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="http://www.near-by.info/favicon.ico"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="javascript" type="text/javascript" src="js/core.js"/>
+</head>
+<script language="javascript" type="text/javascript">
+	var _timerID = -1;
+	
+	function stopTimers() {
+		if (_timerID > -1) {
+			clearInterval(_timerID);
+			_timerID = -1;
+		}
+	}
+</script>
+<body onunload="stopTimers();">
+
+<cfinclude template="cfincludes/logoBox.cfm">
+
+<cfinclude template="cfincludes/navbar.cfm">
+	
+        <div id="subLevelNavOuterHome">
+		</div>
+
+
+  <div id="container">
+
+        <div id="mainWithSidebar">
+    
+            <p>You may Retrieve your Ez-AJAX License below by filling in the correct information.</p>
+            <p>This system allows you to retrieve your runtime licenses for versions prior to and including EzAJAX 0.99.</p>
+            <p>EzAJAX Versions 1.0 and later use a different Runtime License Management System and you will not be able to retrieve those Runtime Licenses here using this system.  </p>
+            <p>EzAJAX 1.0 and later versions use a self-registration technique that eliminates the need for our end-users to bother with their Runtime Licenses.  </p>
+            <p>Runtime Licensing will be handled entirely by our Online Runtime License Processing System for all version after and including EzAJAX 1.0.</p>
+    <cfinclude template="cfincludes/emailAddressForm.cfm">
+    <cfinclude template="cfincludes/queryLicense.cfm">
+    <cfinclude template="cfincludes/prefooter.cfm">
+  </div>
+  </div>
+  
+
+    <br clear="all">
+	
+    <br clear="all">
+
+    <cfinclude template="cfincludes/footer.cfm">
+
+  <div id="footerContent">
+
+  </div>
+  
+  <script language="javascript" type="text/javascript">
+  	if (!browser_is_ff) {
+		div = document.getElementById('message');
+		if (div) {
+			div.innerHTML += '<br/><br/><small>(You MUST use the FireFox browser when using this page due to a bug with our Hosting Provider which we are working to resolve)<br/>We apologize for the inconvenience however this is quite out of our control at the moment.</small>';
+		}
+	}
+  </script>
+
+</body></html>

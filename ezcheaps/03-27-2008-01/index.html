@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+<!-- Copyright 2005 Macromedia, Inc. All rights reserved. -->
+<title>Home Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="images/mm_travel2.css" type="text/css" />
+<script language="JavaScript" type="text/javascript">
+//--------------- LOCALIZEABLE GLOBALS ---------------
+var d=new Date();
+var monthname=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+//Ensure correct for language. English is "January 1, 2004"
+var TODAY = monthname[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+//---------------   END LOCALIZEABLE   ---------------
+</script>
+<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+<script language="javascript1.5" type="text/javascript">
+	var _banners1 = ['<a href="http://www.webfaction.com?affiliate=raychorn" target="_blank"><img alt="Webfaction.Com" border="0" src="images/460x60-agile-bg.png" /></a>','<a href="http://www.webfaction.com?affiliate=raychorn" target="_blank"><img alt="Webfaction.Com" border="0" src="images/460x60-quality-bg.png" /></a>','<a href="http://www.site5.com/in.php?id=51407-9" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/2db/large-banner.gif" /></a>','<a href="http://www.site5.com/in.php?id=51407-11" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/2db/234x60.gif" /></a>','<a href="http://www.site5.com/in.php?id=51407-12" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/2db/banner-reseller.gif" /></a>','<a href="http://www.site5.com/in.php?id=51407-14" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/2db/banner-special2.gif" /></a>','<a href="http://www.site5.com/in.php?id=51407-15" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/2db/banner1.gif" /></a>'];
+
+	var _banners2 = ['<a href="http://www.site5.com/in.php?id=51407-5" target="_blank"><img alt="Powered By Site5.com" border="0" src="http://www.site5.com/creative/badge2.gif" /></a>','<a href="http://www.site5.com/in.php?id=51407-6" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/badge.gif" /></a>','<a href="http://www.site5.com/in.php?id=51407-16" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/2db/125x125.gif" /></a>','<a href="http://www.site5.com/in.php?id=51407-18" target="_blank"><img alt="Hosted By Site5.com" border="0" src="http://www.site5.com/creative/2db/120x60.gif" /></a>','<a href="http://www.webfaction.com?affiliate=raychorn" target="_blank"><img alt="Webfaction.Com" border="0" src="images/110x32-hosting-bg.png" /></a>','<a href="http://www.webfaction.com?affiliate=raychorn" target="_blank"><img alt="Webfaction.Com" border="0" src="images/120x60-quality-bg.png" /></a>'];
+
+	function _int(val) {
+		return parseInt(val.toString().split('.')[0]);
+	}
+	
+	function getRandom(_len) {
+	   return _int(Math.random() * _len);
+	}
+	
+	var _timerID = -1;
+	
+	var _timerBtns = [];
+	var _srcBtns = [];
+	
+	function onPageUnload() {
+		clearInterval(_timerID);
+		_timerID = -1;
+	}
+
+	function ezClientWidth() {
+		var _clientWid$ = -1;
+		var ta = typeof window.innerWidth;
+		if (ta.toUpperCase() == 'number'.toUpperCase()) {
+			_clientWid$ = window.innerWidth;
+		} else if (document.documentElement && document.documentElement.clientWidth) {
+			_clientWid$ = document.documentElement.clientWidth;
+		} else if (document.body && document.body.clientWidth) {
+			_clientWid$ = document.body.clientWidth;
+		}
+		return _clientWid$;
+	}
+
+	function ezClientHeight() {
+		var _clientHt$ = -1;
+		var ta = typeof window.innerHeight;
+		if (ta.toUpperCase() == 'number'.toUpperCase()) {
+			_clientHt$ = window.innerHeight;
+		} else if (document.documentElement && document.documentElement.clientHeight) {
+			_clientHt$ = document.documentElement.clientHeight;
+		} else if (document.body && document.body.clientHeight) {
+			_clientHt$ = document.body.clientHeight;
+		}
+		return _clientHt$;
+	}
+	
+	function delayedButtonEffect(id) {
+		for (var i = 1; i <= 6; i++) {
+			if (id != i) {
+				swapImage(i,0);
+				if (_timerBtns[i]) {
+					clearInterval(_timerBtns[i]);
+					_timerBtns[i] = null;
+				}
+			}
+		}
+		swapImage(id,1);
+		clearInterval(_timerBtns[id]);
+		_timerBtns[id] = null;
+	}
+	
+	function chooseContent(id) {
+		var oDiv = document.getElementById('div_content');
+		var sDiv = document.getElementById('div_content'+id);
+		if ( (oDiv) && (sDiv) ) {
+			oDiv.innerHTML = sDiv.innerHTML;
+			_timerBtns[id] = setInterval('delayedButtonEffect(' + id + ')', 250);
+		}
+	}
+	
+	function swapImage(id,bool) {
+		var oImg = document.getElementById('btn'+id);
+		var sImg = document.getElementById('banner_image');
+		if ( (oImg) && (sImg) ) {
+			if (_timerBtns[id] == null) {
+				if ( (bool) && (_srcBtns[oImg.id] == null) ) {
+					_srcBtns[oImg.id] = sImg.src;
+					sImg.src = oImg.src;
+				} else if ( (!bool) && (_srcBtns[oImg.id]) ) {
+					sImg.src = _srcBtns[oImg.id];
+					_srcBtns[oImg.id] = null;
+				}
+			}
+		}
+	}
+</script>
+<style type="text/css">
+<!--
+.style1 {color: #0000FF}
+.style2 {color: #FFFFFF}
+.style3 {color: #9DACCA}
+-->
+</style>
+</head>
+<body bgcolor="#C0DFFD" onunload="onPageUnload()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr bgcolor="#ffffff">
+    <td colspan="3" rowspan="2" align="left"><img id="banner_image" src="images/ezcheaps.gif" width="800" border="0" usemap="#myMap" /></td>
+    <td height="63" colspan="3" align="left" valign="bottom" nowrap="nowrap" class="style1" id="logo">WWW.EzCheapSites.Com</td>
+    <td width="4">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffffff">
+    <td height="64" colspan="3" id="tagline" valign="middle" align="left"><span class="style2"></span>Ez Cheap Sites - Get Hosted for Cheap !</td>
+	<td width="4">&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td colspan="7" bgcolor="#003366"><img src="images/mm_spacer.gif" alt="" width="1" height="1" border="0" /></td>
+  </tr>
+
+ <tr>
+    <td colspan="7" bgcolor="#003366"><img src="images/mm_spacer.gif" alt="" width="1" height="1" border="0" /></td>
+  </tr>
+ <tr>
+    <td colspan="6" valign="top" align="center">
+    	<div id="div_content">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td width="100%" align="center">
+                    <h2><a href="https://www.securepaynet.net/gdshop/rhp/default.asp?prog_id=434820" target="_blank">Purchase Your Easy Cheap Domains and Hosting Plans</a></h2>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" align="center">
+                    <h2><a href="https://www.securepaynet.net/default.asp?prog_id=434727" target="_blank">Become a Reseller and Maximize YOUR Profits !</a></h2>              </td>
+                </tr>
+              </table>
+        </div>
+    	<div id="div_content1" style="display:none;">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td width="100%" align="center">
+                    #1
+                  </td>
+                </tr>
+              </table>
+        </div>
+    	<div id="div_content2" style="display:none;">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td width="100%" align="center">
+                    #2
+                  </td>
+                </tr>
+              </table>
+        </div>
+    	<div id="div_content3" style="display:none;">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td width="100%" align="center">
+                    #3
+                  </td>
+                </tr>
+              </table>
+        </div>
+    	<div id="div_content4" style="display:none;">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td width="100%" align="center">
+                    #4
+                  </td>
+                </tr>
+              </table>
+        </div>
+    	<div id="div_content5" style="display:none;">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td width="100%" align="center">
+                    #5
+                  </td>
+                </tr>
+              </table>
+        </div>
+    	<div id="div_content6" style="display:none;">
+            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                <tr>
+                  <td width="100%" align="center">
+                    #6
+                  </td>
+                </tr>
+              </table>
+        </div>
+	   <br />      </td>
+  </tr>
+  <tr>
+  	<td width="640" colspan="1" align="center">
+        <table width="100%">
+            <tr>
+                <td align="center">
+                    <div id="_banner2"></div>                 </td>
+            </tr>
+        </table>    </td>
+  	<td colspan="5" align="center">
+        <table width="100%">
+            <tr>
+                <td align="center">
+                    <div id="_banner1"></div>                 </td>
+            </tr>
+        </table>    </td>
+  </tr>
+</table>
+<img id="btn1" src="images/ezcheaps_b1.gif" style="display:none;"/>
+<img id="btn2" src="images/ezcheaps_b2.gif" style="display:none;"/>
+<img id="btn3" src="images/ezcheaps_b3.gif" style="display:none;"/>
+<img id="btn4" src="images/ezcheaps_b4.gif" style="display:none;"/>
+<img id="btn5" src="images/ezcheaps_b5.gif" style="display:none;"/>
+<img id="btn6" src="images/ezcheaps_b6.gif" style="display:none;"/>
+
+<map name="myMap" id="myMap"><area shape="rect" coords="92,114,221,146" href="#Web Hosting Plans" alt="Web Hosting Plans" onclick="javascript:chooseContent(1);" onmouseover="javascript:swapImage(1,1);" onmouseout="javascript:swapImage(1,0);" />
+<area shape="rect" coords="231,115,332,144" href="#Reseller Plans" alt="Reseller Plans" onclick="javascript:chooseContent(2);" onmouseover="javascript:swapImage(2,1);" onmouseout="javascript:swapImage(2,0);"/>
+<area shape="rect" coords="341,112,437,144" href="#Special Deals" alt="Special Deals" onclick="javascript:chooseContent(3);" onmouseover="javascript:swapImage(3,1);" onmouseout="javascript:swapImage(3,0);"/>
+<area shape="rect" coords="447,114,550,145" href="#Why Choose Us ?" alt="Why Choose Us ?" onclick="javascript:chooseContent(4);" onmouseover="javascript:swapImage(4,1);" onmouseout="javascript:swapImage(4,0);"/>
+<area shape="rect" coords="560,113,625,146" href="#Frequently Asked Questions" alt="Frequently Asked Questions" onclick="javascript:chooseContent(5);" onmouseover="javascript:swapImage(5,1);" onmouseout="javascript:swapImage(5,0);"/>
+<area shape="rect" coords="632,113,795,145" href="#Get Started Now !" alt="Get Started Now !" onclick="javascript:chooseContent(6);" onmouseover="javascript:swapImage(6,1);" onmouseout="javascript:swapImage(6,0);"/>
+</map><script language="javascript1.5" type="text/javascript">
+	function nextBanner1() {
+		var i = getRandom(_banners1.length-1);
+		i = ((i < 0) ? 0 : ((i > _banners1.length-1) ? _banners1.length-1 : i));
+		var b1 = document.getElementById('_banner1');
+		if (b1) {
+			b1.innerHTML = _banners1[i];
+		}
+	}
+	
+	function nextBanner2() {
+		var i = getRandom(_banners2.length-1);
+		i = ((i < 0) ? 0 : ((i > _banners2.length-1) ? _banners2.length-1 : i));
+		var b2 = document.getElementById('_banner2');
+		if (b2) {
+			b2.innerHTML = _banners2[i];
+		}
+	}
+	
+	function nextBanner() {
+		nextBanner1();
+		nextBanner2();
+	}
+
+	nextBanner();
+
+	_timerID = setInterval('nextBanner()', 5000);
+	
+	var oHosting = document.getElementById('_hostingFrame');
+	if (oHosting) {
+		oHosting.width = 1000;
+		oHosting.height = 1300;
+	}
+	
+</script></body>
+</html>
